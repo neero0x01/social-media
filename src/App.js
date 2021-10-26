@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Login from "./components/Login";
+import CreatePost from "./components/CreatePost";
+import PostList from "./components/PostList";
 
 function App() {
   const [user, setUser] = useState("");
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     document.title = user ? `${user}'s feed` : "Please Login";
@@ -15,8 +18,8 @@ function App() {
   return (
     <>
       <Header setUser={setUser} />
-      <h1>Header Component</h1>
-      <p className="text-green-600">Welcome back {user}</p>
+      <CreatePost user={user} posts={posts} setPosts={setPosts} />
+      <PostList posts={posts} />
     </>
   );
 }
