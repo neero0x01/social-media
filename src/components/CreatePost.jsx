@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const CreatePost = ({ user, posts, setPosts }) => {
+const CreatePost = ({ user, handleAddPost }) => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const imageInputRef = useRef(null);
@@ -11,8 +11,7 @@ const CreatePost = ({ user, posts, setPosts }) => {
       <form onSubmit={e => {
         e.preventDefault();
         const post = { content, image, user };
-        const newPosts = [...posts, post];
-        setPosts(newPosts);
+        handleAddPost(post);
         setContent("");
         imageInputRef.current.value = "";
       }}>
