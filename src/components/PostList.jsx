@@ -1,9 +1,7 @@
-const PostList = () => {
-  return (
-    <div>
-      <h1>Post List Component</h1>
-    </div>
-   );
+import Post from "./Post";
+
+const PostList = ({ posts }) => {
+  return posts.map((post, i) => <Post key={i} {...post} />);
 }
 
 export default PostList;
