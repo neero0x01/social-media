@@ -23,7 +23,7 @@ function App() {
     <>
       <Header setUser={setUser} />
       <CreatePost user={user} handleAddPost={handleAddPost} />
-      <PostList posts={posts} />
+      <PostList user={user} posts={posts} />
     </>
   );
 }
