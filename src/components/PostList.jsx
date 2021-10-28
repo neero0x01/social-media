@@ -1,7 +1,7 @@
 import Post from "./Post";
 
-const PostList = ({ posts, user }) => {
-  return posts.map((post, i) => <Post key={i} currentUser={user} {...post} />);
+const PostList = ({ posts }) => {
+  return posts.map((post, i) => <Post key={i} {...post} />);
 }
 
 export default PostList;

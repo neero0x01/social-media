@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import {createContext, useCallback, useEffect, useState} from "react";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
+
+export const UserContext = createContext();
 
 function App() {
   const [user, setUser] = useState("");
@@ -20,11 +22,11 @@ function App() {
     return <Login setUser={setUser} />;
   }
   return (
-    <>
+    <UserContext.Provider value={user}>
       <Header setUser={setUser} />
       <CreatePost user={user} handleAddPost={handleAddPost} />
-      <PostList user={user} posts={posts} />
-    </>
+      <PostList posts={posts} />
+    </UserContext.Provider>
   );
 }
 
