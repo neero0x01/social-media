@@ -1,11 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 export default function Header({ user, setUser }) {
   return (
@@ -34,14 +29,8 @@ export default function Header({ user, setUser }) {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <a href="/" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
                       Feed
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Team
                     </a>
                   </div>
                 </div>
@@ -75,49 +64,22 @@ export default function Header({ user, setUser }) {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
+              <a href="/" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
                 Feed
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Team
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Projects
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Calendar
               </a>
             </div>
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-white">Tom Cook</div>
-                  <div className="text-sm font-medium text-gray-400">tom@example.com</div>
+                  <p className="text-white">Logged In as <span className="text-green-500">{ user }</span></p>
                 </div>
               </div>
               <div className="mt-3 px-2 space-y-1">
-                <a
-                  href="#"
+                <button
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
                   Sign out
-                </a>
+                </button>
               </div>
             </div>
           </Disclosure.Panel>
