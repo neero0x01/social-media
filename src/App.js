@@ -23,7 +23,7 @@ function App() {
   }
   return (
     <UserContext.Provider value={user}>
-      <Header setUser={setUser} />
+      <Header user={user} setUser={setUser} />
       <CreatePost user={user} handleAddPost={handleAddPost} />
       <PostList posts={posts} />
     </UserContext.Provider>
