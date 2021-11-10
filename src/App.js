@@ -18,10 +18,6 @@ function App() {
     document.title = user ? `${user}'s feed` : "Please Login";
   }, [user])
 
-  // const handleAddPost = useCallback((newPost) => {
-  //   setPosts([newPost, ...state.posts]);
-  // }, [posts]);
-
   if(!user) {
     return <Login setUser={setUser} />;
   }

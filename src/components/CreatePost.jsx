@@ -14,7 +14,6 @@ const CreatePost = ({ user }) => {
           <form onSubmit={e => {
             e.preventDefault();
             const post = { content, image, user, id: Date.now() };
-            // handleAddPost(post);
             dispatch({ type: "ADD_POST", payload: {post}})
             setContent("");
             imageInputRef.current.value = "";
